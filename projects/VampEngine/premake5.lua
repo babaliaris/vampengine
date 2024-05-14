@@ -6,6 +6,9 @@ project "VampEngine"
     targetdir "%{_WORKING_DIR}/builds/%{cfg.shortname}/"
     objdir "%{_WORKING_DIR}/obj/%{prj.name}_%{cfg.shortname}/"
 
+    pchheader "pch.h"
+    pchsource "src/pch.cpp"
+
     files {
         "src/**.h",
         "src/**.hpp",
@@ -15,7 +18,9 @@ project "VampEngine"
 
     includedirs {
         "src/include",
-        "%{_WORKING_DIR}/external/glfw"
+        "src/include/VampEngine",
+        "%{_WORKING_DIR}/external/glfw",
+        "%{_WORKING_DIR}/external/spdlog/include"
 
     }
 

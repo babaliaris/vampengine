@@ -6,7 +6,9 @@
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/external/googletest/googletest/include",
                 "${workspaceFolder}/external/glfw/include",
-                "${workspaceFolder}/projects/VampEngine/src/include"
+                "${workspaceFolder}/projects/VampEngine/src/include",
+                "${workspaceFolder}/external/spdlog/include",
+
             ],
             "defines": [],
             "compilerPath": "/usr/bin/clang",
