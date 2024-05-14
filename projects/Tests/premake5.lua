@@ -37,3 +37,8 @@ project "Tests"
         runtime "Release"
         optimize "on"
     -- -------------------------------|All Platforms|------------------------------- --
+	
+	-- Windows All Configurations.
+	filter{}
+	filter "system:Windows"
+		staticruntime "on"

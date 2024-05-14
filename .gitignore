@@ -1,9 +1,15 @@
+#Directories
 obj/
 builds/
 logs/
 
+#Linux Specific
 Makefile
 
+#Visual Studio
 *.sln
 *.vcxproj.filters
 *.vcxproj
+*.vs/
+*.vcxproj.user
+*.vcxproj.user
