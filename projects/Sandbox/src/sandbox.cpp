@@ -1,7 +1,24 @@
+#define VAMP_ENTRY_POINT
 #include <VampEngine/VampEngine.h>
 
-int main()
+class Sandbox : public VampEngine::Application
 {
-    VampPrint("Hello World!");
-    return 0;
+    public:
+    Sandbox()
+    {
+
+    }
+
+    ~Sandbox()
+    {
+
+    }
+
+    private:
+};
+
+
+VampEngine::Application *VampEngine::CreateApplication()
+{
+    return new Sandbox();
 }

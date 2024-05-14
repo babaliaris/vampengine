@@ -1,3 +1,4 @@
 #pragma once
 
-void VampPrint(const char *msg);
+#include "application.h"
+#include "entry_point.h"

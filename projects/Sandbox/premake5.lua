@@ -23,19 +23,39 @@ project "Sandbox"
         "VampEngine"
     }
 
-    -- -------------------------------|All Platforms|------------------------------- --
+    defines {
+        "VAMP_AVOID_ERROR_IDE_MARKUP_ANNOYANCE"
+    }
+
+    -- Debug All Operate Systems & Configurations
     filter{}
     filter "configurations:debug"
         runtime "Debug"
         symbols "on"
 
+    -- Dist All Operate Systems & Configurations
     filter{}
     filter "configurations:dist"
         runtime "Release"
         optimize "on"
 
+    -- Release All Operate Systems & Configurations
     filter{}
     filter "configurations:release"
         runtime "Release"
         optimize "on"
-    -- -------------------------------|All Platforms|------------------------------- --
+
+    -- Linux All Configurations
+    filter{}
+    filter "system:Linux"
+        defines {
+            "VAMP_LINUX"
+        }
+
+
+    -- Windows All Configurations
+    filter{}
+    filter "system:Windows"
+        defines {
+            "VAMP_WINDOWS"
+        }
