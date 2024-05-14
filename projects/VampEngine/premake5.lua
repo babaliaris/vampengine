@@ -19,7 +19,7 @@ project "VampEngine"
     includedirs {
         "src/include",
         "src/include/VampEngine",
-        "%{_WORKING_DIR}/external/glfw",
+        "%{_WORKING_DIR}/external/glfw/include",
         "%{_WORKING_DIR}/external/spdlog/include"
 
     }

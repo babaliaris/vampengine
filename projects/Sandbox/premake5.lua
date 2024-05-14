@@ -21,7 +21,8 @@ project "Sandbox"
 
     links {
         "VampEngine",
-        "spdlog"
+        "spdlog",
+        "GLFW"
     }
 
     defines {
@@ -50,14 +51,25 @@ project "Sandbox"
     -- Linux All Configurations
     filter{}
     filter "system:Linux"
+
         defines {
             "VAMP_LINUX"
+        }
+
+        links {
+            "GL", "X11", "pthread",
+            "Xrandr", "Xi", "ldl"
         }
 
 
     -- Windows All Configurations
     filter{}
     filter "system:Windows"
+
         defines {
             "VAMP_WINDOWS"
+        }
+
+        links {
+            "opengl32"
         }
