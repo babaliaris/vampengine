@@ -19,6 +19,10 @@ project "VampEngine"
 
     }
 
+    defines {
+        "SPDLOG_COMPILED_LIB"
+    }
+
     -- -------------------------------|All Platforms|------------------------------- --
     filter{}
     filter "configurations:debug"

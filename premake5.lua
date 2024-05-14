@@ -14,6 +14,7 @@ include "projects/Tests"
 group "external"
     include "external/glfw"
     include "external/googletest/googletest"
+    include "external/spdlog"
 group ""
 
 -- ||||||||||||||||||||Include Projects|||||||||||||||||||| --

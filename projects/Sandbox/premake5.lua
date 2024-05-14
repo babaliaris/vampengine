@@ -20,11 +20,13 @@ project "Sandbox"
     }
 
     links {
-        "VampEngine"
+        "VampEngine",
+        "spdlog"
     }
 
     defines {
-        "VAMP_AVOID_ERROR_IDE_MARKUP_ANNOYANCE"
+        "VAMP_AVOID_ERROR_IDE_MARKUP_ANNOYANCE",
+        "SPDLOG_COMPILED_LIB"
     }
 
     -- Debug All Operate Systems & Configurations
