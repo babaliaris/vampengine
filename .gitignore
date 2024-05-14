@@ -1,4 +1,9 @@
 obj/
 builds/
+logs/
 
 Makefile
+
+*.sln
+*.vcxproj.filters
+*.vcxproj
