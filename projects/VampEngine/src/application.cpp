@@ -24,7 +24,8 @@ namespace VampEngine
         /* Initialize the library */
         if (!glfwInit())
         {
-            printf("GLfw Failed to initialize");
+            int errorCode = glfwGetError(NULL);
+            VAMP_ERROR("GLFW [ErrCode: {0}] Failed to be initialized.", errorCode);
         }
 
         /* Create a windowed mode window and its OpenGL context */
@@ -32,7 +33,8 @@ namespace VampEngine
         if (!window)
         {
             glfwTerminate();
-            printf("GLfw Failed to create the window");
+            int errorCode = glfwGetError(NULL);
+            VAMP_ERROR("GLFW [ErrCode: {0}] Failed to create the window.", errorCode);
         }
 
         /* Make the window's context current */
