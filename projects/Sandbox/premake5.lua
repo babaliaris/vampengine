@@ -20,9 +20,8 @@ project "Sandbox"
     }
 
     links {
-        "VampEngine",
-        "spdlog",
-        "GLFW"
+        "VampEngine", "spdlog",
+        "GLFW", "GLAD"
     }
 
     defines {
