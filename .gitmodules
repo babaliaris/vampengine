@@ -1,0 +1,9 @@
+[submodule "external/glfw"]
+	path = external/glfw
+	url = https://github.com/babaliaris/glfw.git
+[submodule "external/googletest"]
+	path = external/googletest
+	url = https://github.com/babaliaris/googletest.git
+[submodule "external/spdlog"]
+	path = external/spdlog
+	url = https://github.com/babaliaris/spdlog.git
