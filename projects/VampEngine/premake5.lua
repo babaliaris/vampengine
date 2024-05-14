@@ -33,14 +33,23 @@ project "VampEngine"
     filter "configurations:debug"
         runtime "Debug"
         symbols "on"
+        defines {
+            "VAMP_DEBUG"
+        }
 
     filter{}
     filter "configurations:dist"
         runtime "Release"
         optimize "on"
+        defines {
+            "VAMP_DIST"
+        }
 
     filter{}
     filter "configurations:release"
         runtime "Release"
         optimize "on"
+        defines {
+            "VAMP_RELEASE"
+        }
     -- -------------------------------|All Platforms|------------------------------- --

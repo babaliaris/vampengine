@@ -15,6 +15,7 @@ project "Sandbox"
 
     includedirs {
         "src/",
+        "%{_WORKING_DIR}/external/spdlog/include",
         "%{_WORKING_DIR}/projects/VampEngine/src/include"
 
     }

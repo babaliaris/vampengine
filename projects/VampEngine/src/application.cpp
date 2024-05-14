@@ -1,5 +1,6 @@
 #include <pch.h>
 #include <VampEngine/application.h>
+#include <VampEngine/debug/logger.h>
 
 #include <GLFW/glfw3.h>
 
@@ -7,7 +8,7 @@ namespace VampEngine
 {
     Application::Application(const ApplicationConfig &config)
     {
-        
+        Logger::Init();
     }
 
 

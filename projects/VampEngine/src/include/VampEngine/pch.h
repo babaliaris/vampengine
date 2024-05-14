@@ -9,7 +9,3 @@
 #include <array>
 #include <memory>
 #include <functional>
-
-#include <spdlog/spdlog.h>
-#include <spdlog/sinks/base_sink.h>
-#include <spdlog/sinks/stdout_color_sinks.h>
