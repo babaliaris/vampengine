@@ -1,53 +1,39 @@
 #include <pch.h>
 #include <VampEngine/application.h>
 #include <VampEngine/debug/logger.h>
-
 #include <VampEngine/debug/assert.h>
-#include <GLFW/glfw3.h>
+#include <glad/glad.h>
+
 
 namespace VampEngine
 {
     Application::Application(const ApplicationConfig &config)
+    :m_window(nullptr)
     {
         Logger::Init();
+
+        WindowConfig windowConfig   = config.GetWindowConfig();
+        windowConfig.system         = WindowSystemE::GLFW;
+        m_window                    = Window::CreateWindow(windowConfig);
+
+        VAMP_ASSERT(m_window != nullptr);
     }
 
 
     Application::~Application()
     {
-
+        delete m_window;
     }
 
     void Application::Run()
     {
-        GLFWwindow* window;
-
-        VAMP_ASSERT_FUNC(glfwInit(), GLFW_TRUE, VAMP_ERROR("GLFW Failed to be initialized!"));
-
-        //Create a windowed mode window and its OpenGL context
-        window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
-        if (!window)
-        {
-            glfwTerminate();
-            VAMP_ERROR("GLFW Failed to create the window!");
-        }
-
-        /* Make the window's context current */
-        glfwMakeContextCurrent(window);
-
         /* Loop until the user closes the window */
-        while (window && !glfwWindowShouldClose(window))
+        while (m_window->IsRunning())
         {
             /* Render here */
             glClear(GL_COLOR_BUFFER_BIT);
 
-            /* Swap front and back buffers */
-            glfwSwapBuffers(window);
-
-            /* Poll for and process events */
-            glfwPollEvents();
+            m_window->Update();
         }
-
-        glfwTerminate();
     }
 }

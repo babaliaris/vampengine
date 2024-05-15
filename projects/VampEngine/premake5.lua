@@ -20,7 +20,8 @@ project "VampEngine"
         "src/include",
         "src/include/VampEngine",
         "%{_WORKING_DIR}/external/glfw/include",
-        "%{_WORKING_DIR}/external/spdlog/include"
+        "%{_WORKING_DIR}/external/spdlog/include",
+        "%{_WORKING_DIR}/projects/GLAD/src/include"
 
     }
 
@@ -53,3 +54,20 @@ project "VampEngine"
             "VAMP_RELEASE"
         }
     -- -------------------------------|All Platforms|------------------------------- --
+
+    -- Linux All Configurations
+    filter{}
+    filter "system:Linux"
+
+        defines {
+            "VAMP_LINUX"
+        }
+
+
+    -- Windows All Configurations
+    filter{}
+    filter "system:Windows"
+
+        defines {
+            "VAMP_WINDOWS"
+        }

@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <VampEngine/core/vamp_window.h>
 
 namespace VampEngine
 {
@@ -8,6 +9,8 @@ namespace VampEngine
         std::string window_title;
         int window_width;
         int window_height;
+
+        inline WindowConfig GetWindowConfig() const {return {window_title, window_width, window_height};}
     };
 
     class Application
@@ -19,6 +22,7 @@ namespace VampEngine
         void Run();
 
         private:
+        Window *m_window;
     };
 
     Application *CreateApplication();
