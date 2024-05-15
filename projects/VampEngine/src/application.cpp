@@ -2,6 +2,7 @@
 #include <VampEngine/application.h>
 #include <VampEngine/debug/logger.h>
 
+#include <VampEngine/debug/assert.h>
 #include <GLFW/glfw3.h>
 
 namespace VampEngine
@@ -21,27 +22,21 @@ namespace VampEngine
     {
         GLFWwindow* window;
 
-        /* Initialize the library */
-        if (!glfwInit())
-        {
-            int errorCode = glfwGetError(NULL);
-            VAMP_ERROR("GLFW [ErrCode: {0}] Failed to be initialized.", errorCode);
-        }
+        VAMP_ASSERT_FUNC(glfwInit(), GLFW_TRUE, VAMP_ERROR("GLFW Failed to be initialized!"));
 
-        /* Create a windowed mode window and its OpenGL context */
+        //Create a windowed mode window and its OpenGL context
         window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
         if (!window)
         {
             glfwTerminate();
-            int errorCode = glfwGetError(NULL);
-            VAMP_ERROR("GLFW [ErrCode: {0}] Failed to create the window.", errorCode);
+            VAMP_ERROR("GLFW Failed to create the window!");
         }
 
         /* Make the window's context current */
         glfwMakeContextCurrent(window);
 
         /* Loop until the user closes the window */
-        while (!glfwWindowShouldClose(window))
+        while (window && !glfwWindowShouldClose(window))
         {
             /* Render here */
             glClear(GL_COLOR_BUFFER_BIT);
