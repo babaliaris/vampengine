@@ -2,6 +2,7 @@
 #include <VampEngine/application.h>
 #include <VampEngine/debug/logger.h>
 #include <VampEngine/debug/assert.h>
+#include <VampEngine/core/memory/memory_manager.h>
 #include <glad/glad.h>
 
 
@@ -10,7 +11,8 @@ namespace VampEngine
     Application::Application(const ApplicationConfig &config)
     :m_window(nullptr)
     {
-        Logger::Init();
+        Logger::Init(); //Shared ptrs, no need to destroy.
+        MemoryManager::Init();
 
         WindowConfig windowConfig   = config.GetWindowConfig();
         windowConfig.system         = WindowSystemE::GLFW;
@@ -22,7 +24,10 @@ namespace VampEngine
 
     Application::~Application()
     {
-        delete m_window;
+        VAMP_DELETE(m_window);
+
+        //THIS MUST BE THE LAST TO BE DELETED!
+        MemoryManager::Destroy();
     }
 
     void Application::Run()

@@ -1,5 +1,6 @@
 #include <pch.h>
 #include <VampEngine/core/vamp_window.h>
+#include <VampEngine/core/memory/memory_manager.h>
 
 #if defined(VAMP_WINDOWS) || defined(VAMP_LINUX)
     #include <VampEngine/platform/glfw/glfw_window.h>
@@ -22,7 +23,7 @@ namespace VampEngine
         #if defined(VAMP_WINDOWS) || defined(VAMP_LINUX)
         if (config.system == WindowSystemE::GLFW)
         {
-            return new WindowGLFW(config);
+            return VAMP_NEW(WindowGLFW, config);
         }
         #endif
 
