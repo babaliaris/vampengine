@@ -13,6 +13,8 @@ namespace VampEngine
     {
         VAMP_ASSERT(s_manager->m_blocks.size() == 0, VAMP_WARN("There are memory leaks! Check the log files."));
 
+        //TODO if there are memory leaks, write them to a log file. Implemente a FileSystem FIRST!!!
+
         //Delete the remaing blocks.
         for (MemoryBlock *block : s_manager->m_blocks)
         {
