@@ -1,4 +1,5 @@
 #include <pch.h>
+#include <VampEngine/debug/assert.h>
 #include <VampEngine/core/memory/memory_manager.h>
 #include <VampEngine/debug/logger.h>
 

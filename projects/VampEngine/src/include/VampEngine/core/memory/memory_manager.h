@@ -1,8 +1,6 @@
 #pragma once
 #include <string>
 #include <vector>
-#include <VampEngine/debug/assert.h>
-#include <VampEngine/debug/logger.h>
 
 namespace VampEngine
 {
