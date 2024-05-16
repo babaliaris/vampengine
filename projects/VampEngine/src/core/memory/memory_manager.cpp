@@ -1,5 +1,6 @@
 #include <pch.h>
 #include <VampEngine/core/memory/memory_manager.h>
+#include <VampEngine/debug/logger.h>
 
 namespace VampEngine
 {
@@ -13,12 +14,10 @@ namespace VampEngine
     {
         VAMP_ASSERT(s_manager->m_blocks.size() == 0, VAMP_WARN("There are memory leaks! Check the log files."));
 
-        //TODO if there are memory leaks, write them to a log file. Implemente a FileSystem FIRST!!!
-
         //Delete the remaing blocks.
         for (MemoryBlock *block : s_manager->m_blocks)
         {
-            VAMP_ASSERT(false, VAMP_WARN("This line should not be reached!"));
+            Logger::GetMemoryLogger()->warn("{0}:{1}", block->file, block->line);
             delete block;
         }
     }

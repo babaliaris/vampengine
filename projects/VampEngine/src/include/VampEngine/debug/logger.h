@@ -9,6 +9,8 @@ namespace VampEngine
 {
     class Logger
     {
+        friend class MemoryManager;
+
         public:
         static void Init();
 
@@ -19,8 +21,11 @@ namespace VampEngine
         inline static std::shared_ptr<spdlog::logger> GetClientLogger() {return s_client;}
 
         private:
+        static std::shared_ptr<spdlog::logger> s_memory;
         static std::shared_ptr<spdlog::logger> s_engine;
         static std::shared_ptr<spdlog::logger> s_client;
+
+        inline static std::shared_ptr<spdlog::logger> GetMemoryLogger() { return s_memory; }
     };
 }
 
