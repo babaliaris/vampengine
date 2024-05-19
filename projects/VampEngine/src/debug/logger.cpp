@@ -1,7 +1,10 @@
 #include <pch.h>
+#include <string>
+#include <sstream>
 #include <VampEngine/debug/logger.h>
 #include <spdlog/sinks/stdout_color_sinks.h>
 #include <spdlog/sinks/rotating_file_sink.h>
+#include <VampEngine/core/file_system.h>
 
 namespace VampEngine
 {
@@ -11,7 +14,10 @@ namespace VampEngine
 
     void Logger::Init()
     {
-        s_memory = spdlog::rotating_logger_mt("Memory Leak", "logs/memory_leaks.txt", 104857600, 1); //100mb, 1 file.
+        std::stringstream ss;
+        ss << FileSystem::GetWorkingDir() << "logs/memory_leaks.txt";
+
+        s_memory = spdlog::rotating_logger_mt("Memory Leak", ss.str(), 104857600, 1); //100mb, 1 file.
         s_engine = spdlog::stdout_color_mt("VampEngine");
         s_client = spdlog::stdout_color_mt("Client");
         

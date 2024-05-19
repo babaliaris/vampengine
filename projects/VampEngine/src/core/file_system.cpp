@@ -1,6 +1,5 @@
 #include <pch.h>
 #include <VampEngine/core/file_system.h>
-#include <VampEngine/debug/assert.h>
 
 /**
  * THIS FILE CAN NOT USE THE MEMORY MANAGER BECAUSE OF CIRCULAR DEPEDENCY.
@@ -29,7 +28,6 @@ namespace VampEngine
         //Singleton Pattern.
         if (s_ref)
         {
-            VAMP_WARN("FileSystem::s_ref should be initialized only once!");
             return;
         }
 

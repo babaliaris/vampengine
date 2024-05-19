@@ -12,8 +12,8 @@ namespace VampEngine
     Application::Application(const ApplicationConfig &config)
     :m_window(nullptr)
     {
-        Logger::Init(); //Shared ptrs, no need to destroy.
         FileSystem::Init();
+        Logger::Init();
         MemoryManager::Init();
 
         WindowConfig windowConfig   = config.GetWindowConfig();
