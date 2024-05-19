@@ -3,7 +3,6 @@ workspace "VampEngine"
     platforms "x64"
     startproject "Sandbox"
 
-
 -- ||||||||||||||||||||Include Projects|||||||||||||||||||| --
 
 -- include "projects/VampEngine"
