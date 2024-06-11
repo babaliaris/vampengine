@@ -51,7 +51,7 @@ namespace VampEngine
 
     //TODO Maybe overload delete for cleaner code?
     #define VAMP_NEW(object_type, ...)\
-        VampEngine::MemoryManager::PushBlock<object_type>(__FILE__, __LINE__, __VA_ARGS__)
+        VampEngine::MemoryManager::PushBlock<object_type>(__FILE__, __LINE__ __VA_OPT__(,) __VA_ARGS__)
 
 
     #define VAMP_DELETE(object)\

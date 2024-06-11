@@ -11,11 +11,13 @@ namespace VampEngine
     Window::Window(const WindowConfig &config)
     : m_config(config), m_isRunning(false)
     {
+        m_context = GraphicsContext::CreateContext(config.graphics);
     }
 
 
     Window::~Window()
     {
+        VAMP_DELETE(m_context);
     }
 
     Window *Window::CreateWindow(const WindowConfig &config)

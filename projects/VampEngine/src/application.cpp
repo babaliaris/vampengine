@@ -4,7 +4,7 @@
 #include <VampEngine/debug/assert.h>
 #include <VampEngine/core/file_system.h>
 #include <VampEngine/core/memory/memory_manager.h>
-#include <glad/glad.h>
+#include <VampEngine/core/graphics/graphics.h>
 
 
 namespace VampEngine
@@ -18,6 +18,7 @@ namespace VampEngine
 
         WindowConfig windowConfig   = config.GetWindowConfig();
         windowConfig.system         = WindowSystemE::GLFW;
+        windowConfig.graphics       = GraphicsTypeE::OPENGL;
         m_window                    = Window::CreateWindow(windowConfig);
 
         VAMP_ASSERT(m_window != nullptr);
@@ -40,7 +41,7 @@ namespace VampEngine
         while (m_window->IsRunning())
         {
             /* Render here */
-            glClear(GL_COLOR_BUFFER_BIT);
+            m_window->GetGraphicsAPI().ClearColorBuffer();
 
             m_window->Update();
         }

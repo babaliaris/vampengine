@@ -2,7 +2,6 @@
 #include <VampEngine/platform/glfw/glfw_window.h>
 #include <VampEngine/debug/logger.h>
 #include <VampEngine/debug/assert.h>
-#include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
 
@@ -27,8 +26,11 @@ namespace VampEngine
         glfwMakeContextCurrent(m_window);
         glfwSetWindowUserPointer(m_window, this);
         glfwSetWindowCloseCallback(m_window, GlfwWindowCloseCallback);
-
-        VAMP_ASSERT_FUNC(gladLoadGLLoader((GLADloadproc)glfwGetProcAddress), true, VAMP_ERROR("GLAD failed to be initialized."));
+        
+        //Initialize the graphics.
+        GraphicsContext::InitData data;
+        data.data = (void *)glfwGetProcAddress;
+        m_context->Init(data);
     }
 
 
