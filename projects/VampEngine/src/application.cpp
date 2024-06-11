@@ -37,6 +37,8 @@ namespace VampEngine
 
     void Application::Run()
     {
+        m_window->GetGraphicsAPI().SetClearColor(0.5f, 1.0f, 0.5f, 1.0f);
+        
         /* Loop until the user closes the window */
         while (m_window->IsRunning())
         {

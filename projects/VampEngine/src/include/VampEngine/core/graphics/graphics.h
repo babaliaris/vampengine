@@ -21,7 +21,8 @@ namespace VampEngine
         virtual void Init(const InitData &data) = 0;
         virtual ~GraphicsAPI();
 
-        virtual void ClearColorBuffer() = 0;
+        virtual void SetClearColor(float r, float g, float b, float a);
+        virtual void ClearColorBuffer();
 
         protected:
         GraphicsAPI();

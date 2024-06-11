@@ -38,4 +38,16 @@ namespace VampEngine
             }
         }
     }
+
+
+    void GraphicsAPI::SetClearColor(float r, float g, float b, float a)
+    {
+        VAMP_WARN("NOT IMPLEMENTED");
+    }
+
+
+    void GraphicsAPI::ClearColorBuffer()
+    {
+        VAMP_WARN("NOT IMPLEMENTED");
+    }
 }
