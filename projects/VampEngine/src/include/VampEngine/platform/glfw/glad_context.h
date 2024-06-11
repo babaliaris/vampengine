@@ -3,13 +3,13 @@
 
 namespace VampEngine
 {
-    class GladContext : public GraphicsContext
+    class GladContext : public GraphicsAPI
     {
         public:
         GladContext();
         ~GladContext();
 
-        void Init(const GraphicsContext::InitData &data) override;
+        void Init(const GraphicsAPI::InitData &data) override;
         void ClearColorBuffer() override;
     };
 }

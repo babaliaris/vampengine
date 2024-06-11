@@ -11,7 +11,7 @@ namespace VampEngine
     Window::Window(const WindowConfig &config)
     : m_config(config), m_isRunning(false)
     {
-        m_context = GraphicsContext::CreateContext(config.graphics);
+        m_context = GraphicsAPI::CreateAPI(config.graphics);
     }
 
 

@@ -28,7 +28,7 @@ namespace VampEngine
         glfwSetWindowCloseCallback(m_window, GlfwWindowCloseCallback);
         
         //Initialize the graphics.
-        GraphicsContext::InitData data;
+        GraphicsAPI::InitData data;
         data.data = (void *)glfwGetProcAddress;
         m_context->Init(data);
     }

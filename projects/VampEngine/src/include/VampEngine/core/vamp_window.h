@@ -27,7 +27,7 @@ namespace VampEngine
         inline int GetWidth() const {return m_config.width;}
         inline int GetHeight() const {return m_config.height;}
         inline bool IsRunning() const {return m_isRunning;}
-        inline GraphicsContext &GetGraphicsAPI() const {return *m_context;}
+        inline GraphicsAPI &GetGraphicsAPI() const {return *m_context;}
 
         virtual void *GetNativeWindow();
 
@@ -40,7 +40,7 @@ namespace VampEngine
         protected:
         WindowConfig m_config;
         bool m_isRunning;
-        GraphicsContext *m_context;
+        GraphicsAPI *m_context;
 
 
         private:

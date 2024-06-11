@@ -7,7 +7,7 @@ namespace VampEngine
         NONE, OPENGL, DIRECTX12, VULKAN
     };
 
-    class GraphicsContext
+    class GraphicsAPI
     {
         friend class Window;
 
@@ -19,14 +19,14 @@ namespace VampEngine
 
         public:
         virtual void Init(const InitData &data) = 0;
-        virtual ~GraphicsContext();
+        virtual ~GraphicsAPI();
 
         virtual void ClearColorBuffer() = 0;
 
         protected:
-        GraphicsContext();
+        GraphicsAPI();
 
         private:
-        static GraphicsContext *CreateContext(const GraphicsTypeE type);
+        static GraphicsAPI *CreateAPI(const GraphicsTypeE type);
     };
 }

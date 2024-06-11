@@ -10,17 +10,17 @@
 
 namespace VampEngine
 {
-    GraphicsContext::GraphicsContext()
+    GraphicsAPI::GraphicsAPI()
     {
     }
 
 
-    GraphicsContext::~GraphicsContext()
+    GraphicsAPI::~GraphicsAPI()
     {
     }
 
 
-    GraphicsContext *GraphicsContext::CreateContext(const GraphicsTypeE type)
+    GraphicsAPI *GraphicsAPI::CreateAPI(const GraphicsTypeE type)
     {
         switch (type)
         {

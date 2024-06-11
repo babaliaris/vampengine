@@ -6,7 +6,7 @@
 namespace VampEngine
 {
     GladContext::GladContext()
-    : GraphicsContext()
+    : GraphicsAPI()
     {
     }
 
@@ -16,7 +16,7 @@ namespace VampEngine
     }
 
 
-    void GladContext::Init(const GraphicsContext::InitData &data)
+    void GladContext::Init(const GraphicsAPI::InitData &data)
     {
         if (!gladLoadGLLoader((GLADloadproc)data.data))
         {
